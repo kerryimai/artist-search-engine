@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: black;
+  min-height: 100vh;
+}
+
+.landing-container {
+  width: 100%;
+  display: flex;
+  height: 600px;
+  overflow: hidden;
+  background-image: url('./nightLight.jpg');
+  background-position: center;
+  background-size: cover;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.intro {
+  font-size: 28px;
+  font-weight: lighter;
+  color: white;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.search-bar {
+  margin-top: 40px;
+  margin-right: 24px;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.search-input {
+  padding: 0;
+  border-radius: 30px 0 0 30px;
+  border: none;
+  width: 300px;
+  height: 100%;
+  padding-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  box-sizing: border-box;
+  background: linear-gradient(to left, #c392c7, #40c8f1);
+  color: white;
+}
+
+.search-input:focus,
+.search-btn:focus {
+  outline: none;
+}
+
+.search-input:focus {
+  border: 2px solid #00e0e0;
+  background: linear-gradient(to left, #6ce0c5, #5c9cfb);
+}
+
+.search-btn {
+  padding: 0;
+  border-radius: 0 30px 30px 0;
+  border: none;
+  width: 60px;
+  height: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #6ce0c5, #5c9cfb);
+}
+
+.loupe-icon {
+  width: 40px;
+  transition: transform 1.2s ease-in-out;
+}
+
+.loupe-icon:hover {
+  transform: scaleX(-1);
+}
+
+.deco-line {
+  width: 100px;
+  height: 4px;
+  background: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
