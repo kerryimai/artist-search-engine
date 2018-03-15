@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { fetchArtist } from './service';
-import './App.css';
+import { fetchArtist } from '../service';
+import '../App.css';
 import SearchBar from './SearchBar';
 import AlbumsContainer from './AlbumsContainer';
 
@@ -9,7 +9,8 @@ class App extends Component {
     searchInput: '',
     albums: [],
     displayMessage:
-      'Hey you, try entering your favourite artist in the top right search bar!'
+      'Hey you, try entering your favourite artist in the top right search bar!',
+    requestCounter: 0
   };
 
   handleInputChange = e => {
@@ -18,8 +19,16 @@ class App extends Component {
   };
 
   handleArtistSearch = e => {
+    if (this.state.searchInput === '') {
+      return;
+    }
+    const currentCount = this.state.requestCounter + 1;
+    this.setState({ requestCounter: currentCount });
     fetchArtist(this.state.searchInput)
       .then(albums => {
+        if (currentCount !== this.state.requestCounter) {
+          return;
+        }
         this.setState({ albums });
         if (albums.length === 0) {
           this.setState({
@@ -28,12 +37,15 @@ class App extends Component {
           });
         }
       })
-      .catch(err =>
+      .catch(err => {
+        if (currentCount !== this.state.requestCounter) {
+          return;
+        }
         this.setState({
           displayMessage:
             'Sorry, something went wrong, please come back and try again later!'
-        })
-      );
+        });
+      });
   };
 
   render() {

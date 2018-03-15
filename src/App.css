@@ -21,7 +21,8 @@
 }
 
 .intro {
-  font-size: 28px;
+  font-size: 24px;
+  padding: 20px;
   font-weight: lighter;
   color: white;
   margin: 0;
@@ -90,4 +91,19 @@
   background: white;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    margin: auto;
+    width: 90vw;
+  }
+
+  .search-input {
+    width: 60vw;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
 }

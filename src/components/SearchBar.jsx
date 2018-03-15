@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
-import loupe from './loupe.svg';
+import '../App.css';
+import loupe from '../loupe.svg';
 
 const SearchBar = ({ handleInputChange, handleArtistSearch }) => {
   const handleKeyPress = e => {
@@ -19,7 +19,7 @@ const SearchBar = ({ handleInputChange, handleArtistSearch }) => {
         onKeyPress={handleKeyPress}
       />
       <button className="search-btn" onClick={handleArtistSearch}>
-        <img className="loupe-icon" src={loupe} />
+        <img className="loupe-icon" src={loupe} alt="loupe" />
       </button>
     </div>
   );

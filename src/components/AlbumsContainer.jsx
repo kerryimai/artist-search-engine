@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './App.css';
+// import '../App.css';
 import AlbumBlock from './AlbumBlock';
-import './Albums.css';
+import '../Albums.css';
 
 const AlbumsContainer = ({ albums }) => {
   return (
